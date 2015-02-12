@@ -1,12 +1,12 @@
  /*
  *  Custom CSS for subreddit /r/ProgrammingTools
- *  Created by /u/MassRain - github.com/massrain/reddit-nu1
+ *  Created by /u/MassRain - github.com/massrain/reddit-programmingtools
  *  Inspired by CWParsons' TorontoBlueJays and Naut.
  */
  
 /*     ##CHANGELOG##
  *     +Hotfix for last active element.
- *     +Fixed RES active element error.
+ *     +Fixed RES active element error - ************* BROKEN AGAIN ************
  *     +Fixed Submit buttons showing up black when clicked.
  *     +Fixed comment page colors.
  *     +Supporting RES Night Mode
@@ -18,10 +18,9 @@
  *     -New reddit alien logo and subreddit name next to it
  *     -Commend area background
  *     -RES nightmode improvements
- *     -A wiki page
  *     -Working link flair system
  *     -Subscribe button.
- *
+ *     -A wiki page
  *
  *     ##Colors##
  *
@@ -160,8 +159,8 @@ body >  .content:before {
  */
 #header {
     background-color: #052A5F;
-    background: url(%%headerimg%%) no-repeat 100% 20%;
-    border-bottom: 1px solid;
+    background: url(%%headerimg%%) no-repeat 100% 100%;
+    border-bottom: 0px solid;
     overflow: visible !important;
     box-shadow: 0px 0px 10px 0px rgba(53, 53, 74, .3)
 }
@@ -172,7 +171,7 @@ body >  .content:before {
 }
 
 #header-bottom-left {
-    height: 100px;
+    height: 60px;
 }
 
     #header-bottom-left a {
@@ -208,19 +207,16 @@ body >  .content:before {
 }
 
    .pagename a {
-	display: block;
-	visibility: visible !important;
-	position: absolute;
-	left: 428px; /* 8 for left side */
-	z-index: 99;
-	background-image: url(%%logo%%);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	text-indent: -9999px;
-        width: 200px;
-        height: 50px; /* 60 for mirror effect */
-    }
 
+	/*visibility: visible !important;
+	position: absolute;
+	margin-left: -130px; */ /* 8 for left side */
+	/* top: 40px; */ /* 8 for left side */
+        position: absolute;
+        font-size:24px;
+        opacity: .90;
+        
+    }
         .pagename a:hover {
             opacity: 1;
       }
@@ -237,7 +233,7 @@ body >  .content:before {
 
 #header .tabmenu {
     bottom: 0;
-    left: 100px;
+    left: 277px;
     position: absolute;
     padding-left: 50px;
     white-space: nowrap;
@@ -572,22 +568,31 @@ body >  .content:before {
     background-image: url(%%wordmark-300%%);
     height: 50px;
     margin-bottom: 15px;
-    margin-left: 50px;
+    margin-left: 0px;
     text-indent: -9999em;
-    width: 200px;
+    width: 300px;
 }
 
 .subscribers .word {
 	display: none;
 }
+/*.subscribers .number: {
+        display: inline-block;
+        margin-left: 50px;
+        left: 50px;
+        width: auto;
+}
+*/
 .subscribers .number:after {
-	content: ' coders';
+	content: ' subscribers';
 }
 
 .users-online {
     color: #999;
-    display: inline-block;
+    /*display: inline-block;*/
     margin-left: 5px;
+    margin-bottom:8px
+    overflow:hidden
 }
 
     .users-online:before {
@@ -599,8 +604,9 @@ body >  .content:before {
         width: auto;
     }
 
+
     .users-online:after {
-        content: " compiling errors.";
+        content: " users here now.";
     }
 
     .users-online .word {
@@ -651,7 +657,7 @@ body >  .content:before {
     background: #7097b1;
     color: #FFF;
     font-size: 14px;
-    margin: 20px 0 10px;
+    margin: 10px 0 10px;
     text-align: center;
     padding: 4px;
 }
@@ -849,35 +855,45 @@ padding: 3px;
     }
 
         .link.stickied a.title {
-            color: #4e697b !important;
+            color: #b03e2b !important;
         }
 
-     /* ------------------- */
-     /* LAST CLICKED HOTFIX */
-     /* ------------------- */ 
+/* ------------------- */
+/* LAST CLICKED HOTFIX */
+/* ------------------- */ 
 .link.last-clicked {
         border: 0px solid #7097b1;
         border-left: 5px solid #7097b1;
         /*overflow: visible;*/
     }
-
-
       /* .link.last-clicked:not(.linkflair):hover {
             border: 1px solid #052A5F;
             border-left: 5px solid #052A5F;
         }
      */
-    .link.linkflair-gamethread {
+
+/* LINK FLAIRS - DISABLED */
+/*   .link.linkflair-a1 {
         border-left: 5px solid #EC1E31;
-    }
 
+    }
+    .linkflair-a3 .linkflairlabel {
+    background-color: #EC1E31;
+    font-size: 11px;
+    font-weight: bold;
+    color:#000000;
+    border-color: #000000;
+    border-width: 1px;
+    border-radius: 3px;}
     .link.linkflair-weeklythread {
-        border-left: 5px solid #7CBD40;
+    border-left: 5px solid #7CBD40;
     }
 
-    .link.linkflair-announcement {
+    .link.linkflair-a2 {
         border-left: 5px solid #FFCC00;
     }
+
+*/
 
     .link .score.likes,
     .res_post_ups {
@@ -1299,9 +1315,9 @@ html:not([lang="ns"]) .commentarea .thing:after,
 
 
 .RES-keyNav-activeElement[class] {
-    background-color: transparent !important;
+  background-color: transparent !important; 
     /*outline: none;*/
-    border-right: 2px blue;
+    border-right: 2px solid darkblue;
 }
 
 #REScommentNavToggle span:first-child {
@@ -1357,7 +1373,7 @@ html:not([lang="ns"]) .commentarea .thing:after,
     .res-nightmode #sr-header-area {
 			opacity: 0.5;
 			height:20px;
-			background-color: #461811;
+			background-color: #435a6a;
 			border-bottom: 1px solid #333;
                       }
     .res-nightmode .side .titlebox blockquote:first-child ul li {
