@@ -5,6 +5,8 @@
  */
  
 /*     ##CHANGELOG##
+ *     +Wiki page added, at the bottom of page.
+ *     +Link flairs are added.
  *     +Hotfix for last active element.
  *     +Fixed RES active element error - ************* BROKEN AGAIN ************
  *     +Fixed Submit buttons showing up black when clicked.
@@ -596,12 +598,12 @@ body >  .content:before {
 }
 
     .users-online:before {
-        background-image: none;
+      /*  background-image: none;
         display: inline-block;
         content: "";
         height: auto;
         margin-right: 0;
-        width: auto;
+        width: auto; */
     }
 
 
@@ -825,10 +827,6 @@ padding: 3px;
     transition: border 0.2s ease-out;
 }
 
-    .link.linkflair .linkflairlabel {
-        display: none;
-    }
-
     .link.linkflair .flairselector .linkflairlabel {
         display: inline-block;
         margin: 3px;
@@ -872,29 +870,237 @@ padding: 3px;
         }
      */
 
-/* LINK FLAIRS - DISABLED */
-/*   .link.linkflair-a1 {
-        border-left: 5px solid #EC1E31;
 
-    }
-    .linkflair-a3 .linkflairlabel {
-    background-color: #EC1E31;
-    font-size: 11px;
+/* -------- ---- ---------- */
+/*  LINK FLAIRS - DISABLED  */
+/* -------- ---- ---------- */
+.linkflairlabel {
+    border:none;
+    text-align: center;
+    min-width: 80px;
+    padding: 2px 0px;
+    vertical-align: middle;
+	display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 73%;
     font-weight: bold;
-    color:#000000;
-    border-color: #000000;
-    border-width: 1px;
-    border-radius: 3px;}
-    .link.linkflair-weeklythread {
-    border-left: 5px solid #7CBD40;
-    }
+	opacity:.9;
+    background-color: transparent;
+}
 
-    .link.linkflair-a2 {
-        border-left: 5px solid #FFCC00;
-    }
+.linkflair-editor .linkflairlabel {
+    color: #C8F7C5;
+    background-color: #4DAF7C;
+    border: 1px solid black;
+}
+.linkflair-ide .linkflairlabel {
+    color: #DCC6E0;
+    background-color: #E26A6A;
+    border: 1px solid black;
+}
+.linkflair-workflow .linkflairlabel {
+    color: #BE90D4;
+    background-color: #674172;
+    border: 1px solid black;
+}
+.linkflair-diagram .linkflairlabel {
+   color: #C5EFF7;
+   background-color: #3498DB;
+    border: 1px solid black;
+}
+.linkflair-documentation .linkflairlabel {
+    color: #414141;
+    background-color: #D2D7D3;
+    font-size: 68%;
+    border: 1px solid black;
+}
+.linkflair-databases .linkflairlabel {
+    color: #938142;
+    background-color: #F5D76E;
+    border: 1px solid black;
+}
+.linkflair-misc .linkflairlabel {
+    background-color: #2C3E50;
+    color: #E4F1FE;
+    border: 1px solid black;
+}
+.linkflair-apprv .linkflairlabel {
+    color: white;
+    background-color: green;
+    border: 1px solid black;
+}
+.linkflair-request .linkflairlabel {
+    color: #333333;
+    background-color: #F2F1EF;
+    border: 1px solid black;
+}
+html:lang(ed) .link:not(.linkflair-editor) {
+    display: none    }
+html:lang(id) .link:not(.linkflair-ide) {
+    display: none    }
+html:lang(mc) .link:not(.linkflair-misc) {
+    display: none    }
+html:lang(db) .link:not(.linkflair-databases) {
+    display: none    }
+html:lang(dc) .link:not(.linkflair-documentation) {
+    display: none    }
+html:lang(dg) .link:not(.linkflair-diagram) {
+    display: none    }
+html:lang(wf) .link:not(.linkflair-workflow) {
+    display: none    }
+html:lang(rq) .link:not(.linkflair-request) {
+    display: none    }
+.side a[href*='#ed'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #C8F7C5;
+    font-weight: bold;
+    background-color: #4DAF7C;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+	opacity:0.9;
+}
+.side a[href*='#id'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #DCC6E0;
+    font-weight: bold;
+    background-color: #E26A6A;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+   /* left:90px;*/
+    /*top:-24px;*/
+	opacity:.9;
+}
+.side a[href*='#mc'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #2C3E50;
+    color: #E4F1FE;
+    opacity:.9;
+    border:none;
+    /*left:40px;*/
+   /* top:-92px;*/
+}
+.side a[href*='#db'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #938142;
+    font-weight: bold;
+    background-color: #F5D76E;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    opacity:.9;
+    border: none;
+   /* left:180px;
+    top:-92px;*/
+}
+.side a[href*='#dc'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 90%;
+    padding: 2px 0px;
+    color: #414141;
+    font-weight: bold;
+    background-color: #D2D7D3;
+    min-width: 80px;
+    text-align: center;
+    border:1px solid black;
+    vertical-align: middle;
+    opacity:.9;
+    border: none;
+    /*left:90px;
+    top:-67px;*/
+}
+.side a[href*='#dg'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #C5EFF7;
+    font-weight: bold;
+    background-color: #3498DB;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.9;
+    /*left:90px;*/
+    /*top:-45px;*/
+}
+.side a[href*='#wf'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #BE90D4;
+    font-weight: bold;
+    background-color: #674172;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    /*left:180px;
+    top:-48px;*/
+    opacity:.9;
+}
+.side a[href*='#rq'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #333333;
+    font-weight: bold;
+    background-color: #F2F1EF;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.9;
+}
+.side a[href*='http://www.reddit.com/r/programmingtools/hot/'] { 
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.7;
+}
 
-*/
-
+/*
     .link .score.likes,
     .res_post_ups {
         color: #EC1E31;
@@ -904,6 +1110,7 @@ padding: 3px;
     .res_post_downs {
         color: #052A5F;
     }
+*/
 
 /*----------------------------------------------------------
 
@@ -956,8 +1163,8 @@ padding: 3px;
 }
 
     .thumbnail {
-		max-height: 50px;
-		max-width: 70px;
+		max-height: 40px;
+		max-width: 60px;
 	} 
 
 /*
@@ -1457,3 +1664,207 @@ html:not([lang="ns"]) .commentarea .thing:after,
     .res-nightmode .flair {
         color: #FFF;
     }
+
+/*****************
+wiki page
+*****************/
+
+/*** headings ***/
+.wiki-page-index .wiki h3 {
+    text-align: center;
+    color: white!important;
+    background-color: black;
+    overflow: hidden;
+    padding: 2px 0;
+    border-radius: 3px;
+}
+    .wiki-page-index .wiki h3 a {color: white!important; text-decoration: underline;}
+
+.wiki-page-index .wiki h4 {
+    color: #680000!important;
+    border-bottom: 1px solid #000;
+    margin-top: 20px;
+    text-indent: 14px;
+    overflow: hidden;
+    padding-bottom: 2px;
+}
+    .wiki-page-index .wiki h4 a {color: #680000!important; text-decoration: underline;}
+
+/*** lines ***/
+.wiki-page-index .wiki hr {
+    border-bottom: 1px dashed black;
+    border-top: none;
+    border-radius: 0;
+}
+
+
+/*** pictures ***/
+.wiki-page-index .wiki a[href*="/flairpic"] {
+    background-image: url(%%flairexpic%%);
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: inline-block;
+    width: 781px;
+    height: 258px;
+    border: 2px solid black;
+    cursor: default;
+}
+
+
+
+/* flair icons */
+
+.wiki-page-index .wiki a[href$="#ed"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #C8F7C5;
+    font-weight: bold;
+    background-color: #4DAF7C;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+	opacity:0.9;
+}
+
+.wiki-page-index .wiki a[href$="#id"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #DCC6E0;
+    font-weight: bold;
+    background-color: #E26A6A;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+   /* left:90px;*/
+    /*top:-24px;*/
+	opacity:.9;
+}
+
+.wiki-page-index .wiki a[href$="#wf"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #BE90D4;
+    font-weight: bold;
+    background-color: #674172;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    /*left:180px;
+    top:-48px;*/
+    opacity:.9;
+}
+
+.wiki-page-index .wiki a[href$="#dg"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #C5EFF7;
+    font-weight: bold;
+    background-color: #3498DB;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.9;
+}
+.wiki-page-index .wiki a[href$="#dc"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 90%;
+    padding: 2px 0px;
+    color: #414141;
+    font-weight: bold;
+    background-color: #D2D7D3;
+    min-width: 80px;
+    text-align: center;
+    border:1px solid black;
+    vertical-align: middle;
+    opacity:.9;
+    border: none;
+}
+.wiki-page-index .wiki a[href$="#db"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #938142;
+    font-weight: bold;
+    background-color: #F5D76E;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    opacity:.9;
+    border: none;
+    border: 1px solid black;
+}
+
+.wiki-page-index .wiki a[href$="#mc"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #2C3E50;
+    color: #E4F1FE;
+    opacity:.9;
+    border:none;
+}
+
+.wiki-page-index .wiki a[href$="#rq"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: #333333;
+    font-weight: bold;
+    background-color: #F2F1EF;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.9;
+}
+
+.wiki-page-index .wiki a[href$="http://www.reddit.com/r/programmingtools/hot/"] {
+    display: inline-block;
+    position: relative;
+    margin-top:0px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    min-width: 80px;
+    text-align: center;
+    border:none;
+    vertical-align: middle;
+    opacity:.7;
+}
+
+/*** table ***/
+.wiki-page-index .wiki thead {
+    background-color: #B9CFF1;
+}
+.wiki-page-index .wiki thead th {border-color: #DFEDFB;}
+
