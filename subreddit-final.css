@@ -1,14 +1,14 @@
- /*
+/*
  *  Custom CSS for subreddit /r/ProgrammingTools
  *  Created by /u/MassRain - github.com/massrain/reddit-programmingtools
  *  Inspired by CWParsons' TorontoBlueJays and Naut.
  */
  
 /*     ##CHANGELOG##
- *     +Wiki page added, at the bottom of page.
+ *     +Wiki page added, at the bottom of page
  *     +Link flairs are added.
  *     +Hotfix for last active element.
- *     +Fixed RES active element error - ************* BROKEN AGAIN ************
+ *     +Fixed RES active element error
  *     +Fixed Submit buttons showing up black when clicked.
  *     +Fixed comment page colors.
  *     +Supporting RES Night Mode
@@ -16,13 +16,11 @@
  *     +Sidebar photo is not active
  *
  *
- *     #Under construction-#
+ *     #Under construction#
  *     -New reddit alien logo and subreddit name next to it
  *     -Commend area background
  *     -RES nightmode improvements
- *     -Working link flair system
  *     -Subscribe button.
- *     -A wiki page
  *
  *     ##Colors##
  *
@@ -38,10 +36,6 @@
  *
  */
 
- 
- /**
- * Sidebar photo, flairs and some other things not ready yet
- */
  
  /* Short index
  *	1 general
@@ -85,7 +79,7 @@ button {
 }
 
 /* ######### ANNOUNCEMENT TEXT #######*/
-
+/*
 body >  .content:before {
 	content: 'IMPORTANT : Trying out new subreddit css, please leave your feedback & report bugs  to moderators.'; 
 	display: inline-block;
@@ -94,7 +88,7 @@ body >  .content:before {
 	background: #7ea1b8;
 	font-weight: bold;
 }
-
+*/
 /** 2
  * Sub-reddit header area
  */
@@ -169,11 +163,11 @@ body >  .content:before {
 
 #header-img {
     margin-left: 5px;
-    margin-top: 13px;
+    margin-top: -3px;
 }
 
 #header-bottom-left {
-    height: 60px;
+    height: 63px;
 }
 
     #header-bottom-left a {
@@ -206,6 +200,7 @@ body >  .content:before {
     line-height: 50px;
     position: absolute;
     top: 42px;
+    margin-left: 20px;
 }
 
    .pagename a {
@@ -272,7 +267,7 @@ body >  .content:before {
 	.listing-page .tabmenu li a[href*="/promoted"]{display:none;}
 	.listing-page .tabmenu li a[href*="/gilded"]{display:none;}	
 	.listing-page .tabmenu li:nth-of-type(8){display:none;} 
-        .listing-page .tabmenu li:nth-of-type(7){display:none;} 
+        /*.listing-page .tabmenu li:nth-of-type(7){display:none;} */
 
 	
 
@@ -373,6 +368,36 @@ body >  .content:before {
         vertical-align: top;
     }
 
+/*---------- Submission page flair warning ----------*/
+
+form.submit > .formtabs-content > .spacer:first-child::after {
+    display: block;
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #7CBD40;
+    text-align: center;
+    border: 1px solid #267934;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    content: "Please make sure to add a link flair to your submission after you post! (see sidebar for more information)";
+    }
+/* ----Broken/dont touch ---
+.submit #url-field .title::after {
+    content: "[](/flairexpic)";
+    background-image: url(%%flairexpic%%); 
+    background-repeat: no-repeat;
+    background-position: top left;
+    display: inline-block;
+    width: 781px;
+    height: 258px;
+    border: 2px solid black;
+    cursor: default;
+}
+*/
+
+/*---------- Infobar ----------*/
 .infobar {
     background-color: #7CBD40;
     border: 1px solid #267934;
@@ -381,6 +406,7 @@ body >  .content:before {
     .infobar,
     .infobar a {
         color: #FFF;
+        text-align: center;
     }
 
 
@@ -470,7 +496,6 @@ body >  .content:before {
 }
 
 
-
 /* Sidebar - No photo atm */
 
 .side .titlebox {
@@ -486,7 +511,6 @@ body >  .content:before {
     margin-bottom: 10px;
     padding: 10px 12px;
 }
-
 
 
 /* Sidebar - Link Information */
@@ -620,7 +644,6 @@ body >  .content:before {
 }
 
 
-
 /** Sidebar - Flair */
 
 .side .flairtoggle {
@@ -650,6 +673,7 @@ body >  .content:before {
     padding-left: 31px;
     padding-top: 0;
 }
+
 
 
 /** Sidebar - Custom Content */
@@ -728,7 +752,6 @@ padding: 3px;
 }
 
 
-
 /** Sidebar - Moderator */
 
 .leavemoderator {
@@ -762,14 +785,15 @@ padding: 3px;
     #moderation_tools .title h1:before {
         content: "";
     }
-/*
-*    .sidecontentbox .title h1:before {
-*       content: "Moderators";
-*    }
-*    .sidecontentbox .title2 h1:before {
-*       content: "Recently viewed"; 
-*    }
+
+/*    .sidecontentbox .title h1:before {
+       content: "Moderators";
+    }
+    .sidecontentbox .title2 h1:before {
+      content: "Recently viewed"; 
+    }
 */
+
    .sidecontentbox .title .collapse-button {
        position: absolute;
         top: 6px;
@@ -894,7 +918,7 @@ padding: 3px;
     background-color: #4DAF7C;
     border: 1px solid black;
 }
-.linkflair-ide .linkflairlabel {
+.linkflair-terminal .linkflairlabel {
     color: #DCC6E0;
     background-color: #E26A6A;
     border: 1px solid black;
@@ -925,11 +949,14 @@ padding: 3px;
     color: #E4F1FE;
     border: 1px solid black;
 }
-.linkflair-apprv .linkflairlabel {
-    color: white;
-    background-color: green;
+.linkflair-monthlythread .linkflairlabel {
+    color: #E4F1FE;
+    background-color: #33b3a6;
     border: 1px solid black;
+    font-size: 68%;
 }
+body:not(.moderator) .flairsample-left .linkflair-monthlythread { display: none; }
+
 .linkflair-request .linkflairlabel {
     color: #333333;
     background-color: #F2F1EF;
@@ -937,7 +964,7 @@ padding: 3px;
 }
 html:lang(ed) .link:not(.linkflair-editor) {
     display: none    }
-html:lang(id) .link:not(.linkflair-ide) {
+html:lang(tl) .link:not(.linkflair-terminal) {
     display: none    }
 html:lang(mc) .link:not(.linkflair-misc) {
     display: none    }
@@ -966,7 +993,7 @@ html:lang(rq) .link:not(.linkflair-request) {
     vertical-align: middle;
 	opacity:0.9;
 }
-.side a[href*='#id'] { 
+.side a[href*='#tl'] { 
     display: inline-block;
     position: relative;
     margin-top:0px;
@@ -1098,6 +1125,40 @@ html:lang(rq) .link:not(.linkflair-request) {
     border:none;
     vertical-align: middle;
     opacity:.7;
+}
+
+
+.side a[href*='http://www.reddit.com/r/programmingtools/wiki/index'] { 
+    display: inline-block;
+    position: relative;
+    margin-left:20px;
+    font-size: 100%;
+    padding: 2px 0px;
+    color: black;
+    font-weight: 14;
+    font-weight: bold;
+    background-color: transparent;
+    min-width: 240px;
+    text-align: center;
+    border:1px solid black;
+    vertical-align: middle;
+    opacity:.9;
+}
+
+.side a[href*='http://www.reddit.com/r/programmingtools/search?sort=new&restrict_sr=on&q=flair%3AMonthly%2BThread'] { 
+    display: inline-block;
+    position: relative;
+    margin-left:0px;
+    padding: 2px 0px;
+    /*font-weight: 14;*/
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    vertical-align: middle;
+    opacity:.9;
+    color: #E4F1FE;
+    background-color: #33b3a6;
+    font-size: 78%;
 }
 
 /*
@@ -1673,7 +1734,7 @@ wiki page
 .wiki-page-index .wiki h3 {
     text-align: center;
     color: white!important;
-    background-color: black;
+    background-color: #59788d;
     overflow: hidden;
     padding: 2px 0;
     border-radius: 3px;
@@ -1681,14 +1742,14 @@ wiki page
     .wiki-page-index .wiki h3 a {color: white!important; text-decoration: underline;}
 
 .wiki-page-index .wiki h4 {
-    color: #680000!important;
-    border-bottom: 1px solid #000;
+    color: #7097b1!important;
+    border-bottom: 1px solid #7097b1;
     margin-top: 20px;
     text-indent: 14px;
     overflow: hidden;
     padding-bottom: 2px;
 }
-    .wiki-page-index .wiki h4 a {color: #680000!important; text-decoration: underline;}
+    .wiki-page-index .wiki h4 a {color: #7097b1!important; text-decoration: underline;}
 
 /*** lines ***/
 .wiki-page-index .wiki hr {
@@ -1700,7 +1761,7 @@ wiki page
 
 /*** pictures ***/
 .wiki-page-index .wiki a[href*="/flairpic"] {
-    background-image: url(%%flairexpic%%);
+    background-image: url(%%flairexpic%%); 
     background-repeat: no-repeat;
     background-position: top left;
     display: inline-block;
@@ -1867,4 +1928,3 @@ wiki page
     background-color: #B9CFF1;
 }
 .wiki-page-index .wiki thead th {border-color: #DFEDFB;}
-
