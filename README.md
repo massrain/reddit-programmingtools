@@ -1,4 +1,4 @@
 # Custom subreddit css
 For subreddit /r/ProgrammingTools
 
-reddit.com/r/programmingtools
+http//www.reddit.com/r/programmingtools
